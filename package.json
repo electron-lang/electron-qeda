@@ -1,0 +1,9 @@
+{
+  "name": "electron-qeda",
+  "version": "1.0.0",
+  "description": "Wrapper for using qeda with electron.",
+  "main": "index.js",
+  "repository": "https://github.com/electron-lang/qeda",
+  "author": "David Craven <david@craven.ch>",
+  "license": "ISC"
+}
