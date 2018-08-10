@@ -9,6 +9,7 @@
   "scripts": {
     "prepare": "tsc"
   },
+  "files": [ "src", "lib" ],
   "dependencies": {
     "libkicad": "next",
     "qeda": "^0.4.0"
