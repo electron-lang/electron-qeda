@@ -1,6 +1,6 @@
 {
   "name": "electron-qeda",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Wrapper for using qeda with electron.",
   "main": "index.js",
   "repository": "https://github.com/electron-lang/qeda",
@@ -9,7 +9,10 @@
   "scripts": {
     "prepare": "tsc"
   },
-  "files": [ "src", "lib" ],
+  "files": [
+    "src",
+    "lib"
+  ],
   "dependencies": {
     "libkicad": "next",
     "qeda": "^0.4.0"
