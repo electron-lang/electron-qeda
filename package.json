@@ -1,6 +1,6 @@
 {
   "name": "electron-qeda",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Wrapper for using qeda with electron.",
   "main": "lib/index.js",
   "repository": "https://github.com/electron-lang/qeda",
