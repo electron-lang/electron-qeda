@@ -1,0 +1,55 @@
+# Electron QEDA wrapper
+
+Wrapps qeda for use with electron.
+
+## Example usage
+
+```ts
+import * as fs from 'fs'
+import * as path from 'path'
+import { FpLibTable } from 'libkicad'
+import { Library } from '../src'
+
+const layoutDir = path.join(__dirname, '..', 'layout');
+if (!fs.existsSync(layoutDir)) {
+    fs.mkdirSync(layoutDir);
+}
+
+process.chdir(layoutDir);
+
+const fplib = new FpLibTable();
+fplib.addLib('qeda-generated-lib');
+fplib.write();
+
+const lib = new Library('qeda-generated-lib')
+lib.addFootprint({
+    name: 'R0402',
+    description: 'Chip resistor 1x0.5 mm',
+    keywords: [ 'Resistor', '1/16W' ],
+    housing: {
+        pattern: 'chip',
+        bodyLength: '0.9-1.1',
+        bodyWidth: '0.45-0.55',
+        height: '0.3-0.4',
+        leadLength: '0.1-0.3'
+    }
+})
+lib.generate(layoutDir)
+```
+
+## License
+ISC License
+
+Copyright (c) 2017, David Craven and others
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted, provided that the above
+copyright notice and this permission notice appear in all copies.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE
+OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
